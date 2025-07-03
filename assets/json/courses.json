@@ -1,0 +1,66 @@
+{
+"courses":[
+   
+   {
+      "id": 1,
+      "title": "جامعة جدة – جافا 1 – الفصل الصيفى – الجزء الأول (ميدتيرم)",
+      "description": "Learn Java programming fundamentals with practical examples",
+      "category": "Java",
+      "price": "257 ryal",
+      "imageUrl": "https://etqan-academy.com/wp-content/uploads/2024/01/course-cover.png",
+      "instructor": "Dr. Ahmed Hassan",
+      "duration": "8 weeks",
+      "level": "Beginner",
+      "rating": 4.5,
+      "students": 1250,
+      "isNetwork": true,
+      "url": "https://etqan-academy.com/courses/%d8%ac%d8%a7%d9%85%d8%b9%d8%a9-%d8%ac%d8%af%d8%a9-%d8%ac%d8%a7%d9%81%d8%a7-1-%d8%a7%d9%84%d9%81%d8%b5%d9%84-%d8%a7%d9%84%d8%b5%d9%8a%d9%81%d9%89-%d8%a7%d9%84%d8%ac%d8%b2%d8%a1-%d8%a7%d9%84%d8%ab/"
+    },
+    {
+      "id": 2,
+      "title": "مقدمة في البرمجة – الجزء الأول",
+      "description": "Introduction to programming fundamentals",
+      "category": "Programming Basics",
+      "price": "175 ryal",
+      "imageUrl": "https://etqan-academy.com/wp-content/uploads/2024/01/course-cover.png",
+      "instructor": "Prof. Sarah Johnson",
+      "duration": "6 weeks",
+      "level": "Beginner",
+      "rating": 4.8,
+      "students": 2100,
+      "isNetwork": true,
+      "url": "https://etqan-academy.com/courses/%d9%85%d9%82%d8%af%d9%85%d8%a9-%d9%81%d9%8a-%d8%a7%d9%84%d8%a8%d8%b1%d9%85%d8%ac%d8%a9-%d8%a7%d9%84%d8%ac%d8%b2%d8%a1-%d8%a7%d9%84%d8%a3%d9%88%d9%84/"
+    },
+    {
+      "id": 3,
+      "title": "جامعة الملك سعود – قواعد البيانات – الفصل الأول",
+      "description": "Database fundamentals and SQL programming",
+      "category": "Sql",
+      "price": "200 ryal",
+      "imageUrl": "https://etqan-academy.com/wp-content/uploads/2024/01/course-cover.png",
+      "instructor": "Dr. Michael Chen",
+      "duration": "10 weeks",
+      "level": "Intermediate",
+      "rating": 4.6,
+      "students": 1100,
+      "isNetwork": true,
+      "url": "https://etqan-academy.com/courses/%d8%ac%d8%a7%d9%85%d8%b9%d8%a9-%d8%a7%d9%84%d9%85%d9%84%d9%83-%d8%b3%d8%b9%d9%88%d8%af-%d9%82%d9%88%d8%a7%d8%b9%d8%af-%d8%a7%d9%84%d8%a8%d9%8a%d8%a7%d9%86%d8%a7%d8%aa-%d8%a7%d9%84%d9%81%d8%b5%d9%84-%d8%a7%d9%84%d8%a3%d9%88%d9%84/"
+    },
+    {
+      "id": 4,
+      "title": "جامعة الإمام – سي بلس بلس – الجزء الأول",
+      "description": "C++ programming fundamentals",
+      "category": "C++",
+      "price": "225 ryal",
+      "imageUrl": "https://etqan-academy.com/wp-content/uploads/2024/01/course-cover.png",
+      "instructor": "Prof. David Brown",
+      "duration": "12 weeks",
+      "level": "Beginner",
+      "rating": 4.7,
+      "students": 950,
+      "isNetwork": true,
+      "url": "https://etqan-academy.com/courses/%d8%ac%d8%a7%d9%85%d8%b9%d8%a9-%d8%a7%d9%84%d8%a5%d9%85%d8%a7%d9%85-%d8%b3%d9%8a-%d8%a8%d9%84%d8%b3-%d8%a8%d9%84%d8%b3-%d8%a7%d9%84%d8%ac%d8%b2%d8%a1-%d8%a7%d9%84%d8%a3%d9%88%d9%84/"
+    }
+]
+
+}
