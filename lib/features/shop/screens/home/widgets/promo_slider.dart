@@ -1,4 +1,5 @@
-import 'package:shopping_ui/features/shop/screens/store/wedgits/card_course_slide.dart';
+// import 'package:shopping_ui/features/shop/screens/store/wedgits/card_course_slide.dart';
+import 'package:shopping_ui/common/wedgits/images/t_rounded_image.dart';
 import 'package:shopping_ui/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
@@ -17,11 +18,10 @@ class TPromoSlider extends StatelessWidget {
         itemBuilder: (_, index) {
           return Padding(
             padding: const EdgeInsets.only(right: TSizes.spaceBtwItems),
-            child: TCardCoursSlide(
+            child: TRoundedImage(
+              width: 300,
               imageUrl: banners[index],
               applyImageRadius: true,
-              width: 280,
-              hight: 150,
             ),
           );
         },

@@ -1,13 +1,14 @@
+import 'package:flutter/cupertino.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:shopping_ui/common/wedgits/custome_shapes/containers/primary_header_container.dart';
 import 'package:shopping_ui/common/wedgits/custome_shapes/containers/search_container.dart';
 import 'package:shopping_ui/common/wedgits/layout/grid_view.dart';
-import 'package:shopping_ui/common/wedgits/products/product_cards/course_card.dart';
+import 'package:shopping_ui/common/wedgits/products/product_cards/product_card_vertical.dart';
 import 'package:shopping_ui/common/wedgits/texts/section_heading.dart';
-import 'package:shopping_ui/features/shop/model/course_model.dart';
-import 'package:shopping_ui/features/shop/model/course_service.dart';
+
 import 'package:shopping_ui/features/shop/screens/home/widgets/home_appbar.dart';
-import 'package:shopping_ui/features/shop/screens/home/widgets/home_category.dart';
 import 'package:shopping_ui/features/shop/screens/home/widgets/promo_slider.dart';
+import 'package:shopping_ui/features/shop/screens/home/widgets/hot_offers.dart';
 
 import 'package:shopping_ui/utils/constants/image_strings.dart';
 import 'package:shopping_ui/utils/constants/sizes.dart';
@@ -23,22 +24,11 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  List<Course> courses = [];
   bool isLoading = true;
 
   @override
   void initState() {
     super.initState();
-    loadCourses();
-  }
-
-  Future<void> loadCourses() async {
-    await CourseService.loadCourses();
-    final allCourses = CourseService.getAllCourses();
-    setState(() {
-      courses = allCourses;
-      isLoading = false;
-    });
   }
 
   @override
@@ -66,8 +56,6 @@ class _HomeScreenState extends State<HomeScreen> {
                           textColor: Colors.white,
                         ),
                         const SizedBox(height: TSizes.spaceBtwItems),
-
-                        THomeCtagory(),
                       ],
                     ),
                   ),
@@ -79,49 +67,41 @@ class _HomeScreenState extends State<HomeScreen> {
             Column(
               children: [
                 TPromoSlider(
-                  banners: [TImages.banner1, TImages.banner2, TImages.banner3],
+                  banners: [
+                    TImages.banner4,
+                    TImages.banner5,
+                    TImages.banner6,
+                    TImages.banner7,
+                  ],
                 ),
 
                 Padding(
                   padding: const EdgeInsets.all(TSizes.defaultSpace),
-                  child: Column(
-                    children: [
-                      TSectionHeading(
-                        title: 'All Courses',
-                        showActionButton: true,
-                        onPressed: () {},
-                      ),
-                      const SizedBox(height: TSizes.spaceBtwItems),
+                  child: Center(
+                    child: Column(
+                      children: [
+                        TSectionHeading(
+                          title: 'Our Product',
+                          showActionButton: true,
+                          onPressed: () {},
+                        ),
+                        const SizedBox(height: TSizes.spaceBtwItems),
 
-                      if (isLoading)
-                        const Center(child: CircularProgressIndicator())
-                      else if (courses.isEmpty)
-                        Center(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(
-                                Icons.school_outlined,
-                                size: 64,
-                                color: Colors.grey[400],
-                              ),
-                              SizedBox(height: TSizes.spaceBtwItems),
-                              Text(
-                                'No courses available',
-                                style: Theme.of(context).textTheme.titleMedium,
-                              ),
-                            ],
-                          ),
-                        )
-                      else
                         TGridLayout(
-                          itemCount: courses.length,
+                          itemCount: 8,
                           mainAxisExtent: 320,
                           itemBuilder: (context, index) {
-                            return CourseCard(course: courses[index]);
+                            return TProductCardVertical(
+                              imageUrl: TImages.productImage11,
+                              nameProduct: "C++",
+                              price: "20",
+                            );
                           },
                         ),
-                    ],
+                        const SizedBox(height: 32),
+                        HotOffers(),
+                      ],
+                    ),
                   ),
                 ),
               ],

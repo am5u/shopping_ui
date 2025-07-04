@@ -12,7 +12,7 @@ class THomeAppBar extends StatelessWidget {
       title: Column(
         children: [
           Text(
-            "Teacher Name",
+            "Home",
             // TTexts.homeAppbarTitle,
             style: Theme.of(
               context,
@@ -20,7 +20,7 @@ class THomeAppBar extends StatelessWidget {
           ),
 
           Text(
-            "Mohamed Ibrahim",
+            "Shoping App",
             // TTexts.homeAppbarSubTitle,
             style: Theme.of(
               context,

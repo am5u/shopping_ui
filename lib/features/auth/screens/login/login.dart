@@ -1,6 +1,5 @@
 import "package:easy_localization/easy_localization.dart";
 import "package:shopping_ui/common/styles/spacing_styles.dart";
-import "package:shopping_ui/features/auth/screens/password_configration/reset_password.dart";
 import "package:shopping_ui/features/auth/screens/login/signup.dart";
 import "package:shopping_ui/navigation_menu.dart";
 import "package:shopping_ui/utils/constants/colors.dart";
@@ -12,12 +11,21 @@ import "package:shopping_ui/utils/constants/sizes.dart";
 import "package:get/get.dart";
 import "package:iconsax/iconsax.dart";
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
   @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  @override
   Widget build(BuildContext context) {
     final String currentLang = context.locale.languageCode;
+    TextEditingController emailController = TextEditingController();
+    TextEditingController passwordController = TextEditingController();
+
+    final _formkey = GlobalKey<FormState>();
 
     final dark = THelperFunctions.isDarkMode(context);
     return Scaffold(
@@ -28,12 +36,7 @@ class LoginScreen extends StatelessWidget {
             child: Column(
               children: [
                 // header and logo
-                Image(
-                  height: 150,
-                  image: AssetImage(
-                    dark ? TImages.lightAppLogo : TImages.darkAppLogo,
-                  ),
-                ),
+          
 
                 Text(
                   "loginTitle",
@@ -46,6 +49,7 @@ class LoginScreen extends StatelessWidget {
                 ).tr(),
                 // Form for login
                 Form(
+                  key: _formkey,
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
                       vertical: TSizes.spaceBtwSections,
@@ -54,14 +58,30 @@ class LoginScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
 
                       children: [
-                        TextField(
+                        TextFormField(
+                          controller: emailController,
+                          validator: (value) {
+                            if (value != null && value.isEmpty) {
+                              return TTexts.canot_be_null;
+                            } else if (value != null && !value.contains('@')) {
+                              return TTexts.invildEmail;
+                            }
+                          },
                           decoration: InputDecoration(
                             prefixIcon: Icon(Iconsax.direct_right),
                             labelText: TTexts.email,
                           ),
                         ),
                         const SizedBox(height: TSizes.spaceBtwInputFields),
-                        TextField(
+                        TextFormField(
+                          controller: passwordController,
+                          validator: (value) {
+                            if (value != null && value.isEmpty) {
+                              return TTexts.canot_be_null;
+                            } else if (value != null && value.length < 6) {
+                              return TTexts.invildPassword;
+                            }
+                          },
                           decoration: InputDecoration(
                             prefixIcon: Icon(Iconsax.password_check),
                             labelText: TTexts.password,
@@ -85,10 +105,7 @@ class LoginScreen extends StatelessWidget {
                             //forget password
                             TextButton(
                               onPressed: () {
-                                THelperFunctions.navigateToScreen(
-                                  context,
-                                  ResetPasswordScreen(),
-                                );
+                           
                               },
                               child: Text(TTexts.forgetPassword),
                             ),
@@ -99,8 +116,14 @@ class LoginScreen extends StatelessWidget {
                         SizedBox(
                           width: double.infinity,
                           child: ElevatedButton(
-                            onPressed:
-                                () => Get.offAll(() => const NavigationMenu()),
+                            onPressed: () {
+                              if (_formkey.currentState!.validate()) {
+                                THelperFunctions.fadeToScreen(
+                                  context,
+                                  const NavigationMenu(),
+                                );
+                              }
+                            },
                             child: Text(TTexts.signIn),
                           ),
                         ),

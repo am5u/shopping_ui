@@ -54,12 +54,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 children: [
                   TSectionHeading(title: "Account Setting"),
                   SizedBox(height: TSizes.spaceBtwItems),
-                  TSettingMenuTile(
-                    icon: Icons.school,
-                    title: "My Courses",
-                    subtitle: "See My Courses",
-                    onTap: () {},
-                  ),
+            
                   TSettingMenuTile(
                     icon: Iconsax.shopping_cart,
                     title: "My Cart",

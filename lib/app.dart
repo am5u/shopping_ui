@@ -1,4 +1,5 @@
 import "package:shopping_ui/features/auth/screens/login/login.dart";
+import "package:shopping_ui/features/welcome/welcome.dart";
 import "package:shopping_ui/utils/theme/theme.dart";
 import "package:flutter/material.dart";
 import "package:easy_localization/easy_localization.dart";
@@ -17,7 +18,7 @@ class App extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: TAppTheme.lightAppTheme,
       darkTheme: TAppTheme.darkAppTheme,
-      home: const LoginScreen(),
+      home:  WelcomeScreen(),
     );
   }
 }

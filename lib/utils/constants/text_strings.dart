@@ -36,6 +36,13 @@ class TTexts {
   static String get forgetPassword => "forgetPassword".tr();
   static String get signIn => "signIn".tr();
   static String get createAccount => "createAccount".tr();
+  static String get invildEmail => "invildEmail".tr();
+  static String get passwordNotMatch => "passwordNotMatch".tr();
+
+  static String get canot_be_null => "canot_be_null".tr();
+
+  static String get invildPassword => "invildPassword".tr();
+
   static String get orSignInWith => "orSignInWith".tr();
   static String get orSignUpWith => "orSignUpWith".tr();
   static String get iAgreeTo => "iAgreeTo".tr();
@@ -46,7 +53,7 @@ class TTexts {
   static String get resendEmailIn => "resendEmailIn".tr();
 
   // -- Authentication Headings
-  static String get SearchBarText => "Search in course".tr();
+  static String get SearchBarText => "Search".tr();
   static String get loginTitle => "loginTitle".tr();
   static String get loginSubTitle => "loginSubTitle".tr();
   static String get signupTitle => "signupTitle".tr();

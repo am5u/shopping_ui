@@ -1,6 +1,5 @@
 import 'package:shopping_ui/features/personlization/screens/settings/settings.dart';
 import 'package:shopping_ui/features/shop/screens/home/home.dart';
-import 'package:shopping_ui/features/shop/screens/store/store.dart';
 import 'package:shopping_ui/features/shop/screens/wishlist/wishlist.dart';
 import 'package:shopping_ui/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
@@ -26,10 +25,7 @@ class NavigationMenu extends StatelessWidget {
               icon: Icon(Iconsax.home),
               label: TTexts.HomeString,
             ),
-            NavigationDestination(
-              icon: Icon(Iconsax.shop),
-              label: TTexts.CoursesString,
-            ),
+
             NavigationDestination(
               icon: Icon(Iconsax.heart),
               label: TTexts.WishlistString,
@@ -51,7 +47,6 @@ class NavigationController extends GetxController {
 
   final screens = [
     const HomeScreen(),
-    const StoreScreen(),
     const FavouriteScreen(),
     const SettingsScreen(),
   ];

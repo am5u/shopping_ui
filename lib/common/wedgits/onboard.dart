@@ -1,4 +1,4 @@
-import 'package:shopping_ui/features/auth/screens/signup.dart';
+import 'package:shopping_ui/features/auth/screens/login/signup.dart';
 import 'package:shopping_ui/utils/constants/sizes.dart';
 import 'package:shopping_ui/utils/constants/text_strings.dart';
 import 'package:shopping_ui/utils/helpers/helper_functions.dart';

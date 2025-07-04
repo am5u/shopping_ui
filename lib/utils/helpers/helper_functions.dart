@@ -65,7 +65,19 @@ class THelperFunctions {
   }
 
   static void navigateToScreen(BuildContext context, Widget screen) {
-    Navigator.push(context, MaterialPageRoute(builder: (_) => screen));
+    Navigator.push(context, MaterialPageRoute(builder: (context) => screen));
+  }
+
+  static void fadeToScreen(BuildContext context, Widget screen) {
+    Navigator.of(context).pushReplacement(
+      PageRouteBuilder(
+        pageBuilder: (context, animation, secondaryAnimation) => screen,
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          return FadeTransition(opacity: animation, child: child);
+        },
+        transitionDuration: Duration(milliseconds: 500),
+      ),
+    );
   }
 
   static String truncateText(String text, int maxLength) {
@@ -108,17 +120,12 @@ class THelperFunctions {
 
     if (currentLocale.languageCode == 'en') {
       context.setLocale(const Locale('ar'));
-         
     } else {
       context.setLocale(const Locale('en'));
-               
-
-
     }
-      Restart.restartApp();
+    Restart.restartApp();
 
     // Force rebuild of the UI
-
   }
 
   static List<Widget> wrapWidgets(List<Widget> widgets, int rowSize) {
